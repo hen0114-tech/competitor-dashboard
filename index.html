@@ -119,6 +119,7 @@ footer { text-align:center; padding:30px; color:var(--text-secondary); font-size
     <button class="tab" onclick="switchTab('updates')">最新动态</button>
     <button class="tab" onclick="switchTab('stats')">统计分析</button>
     <button class="tab" onclick="switchTab('industry')">行业资讯</button>
+    <button class="tab" onclick="switchTab('about')">关于数据</button>
   </div>
 
   <div id="tabContent"><div class="loading">加载中...</div></div>
@@ -189,10 +190,11 @@ function switchTab(tab) {
   else if (tab === 'updates') renderUpdates();
   else if (tab === 'stats') renderStats();
   else if (tab === 'industry') renderIndustry();
+  else if (tab === 'about') renderAbout();
 }
 
 function getTabName(tab) {
-  return {companies:'企业列表',updates:'最新动态',stats:'统计分析',industry:'行业资讯'}[tab];
+  return {companies:'企业列表',updates:'最新动态',stats:'统计分析',industry:'行业资讯',about:'关于数据'}[tab];
 }
 
 // ========== 企业列表 ==========
@@ -282,22 +284,6 @@ function renderUpdates() {
   });
   html += '</div></div>';
 
-  // 行业资讯
-  if (collected.industry_news && collected.industry_news.length) {
-    html += '<div class="card" style="margin-top:20px"><div class="card-header"><h3>行业资讯</h3></div><div style="padding:0 20px">';
-    collected.industry_news.forEach(n=>{
-      html += '<div class="update-item">';
-      html += '<div class="up-header">';
-      html += `<div class="up-title"><a href="${n.url||'#'}" target="_blank">${n.title}</a></div>`;
-      html += '<span class="badge badge-gov">行业</span>';
-      html += '</div>';
-      html += `<div class="up-meta"><span>${n.date||''}</span></div>`;
-      html += `<div class="up-summary">${n.summary||''}</div>`;
-      html += '</div>';
-    });
-    html += '</div></div>';
-  }
-
   document.getElementById('tabContent').innerHTML = html;
 }
 
@@ -350,16 +336,76 @@ function drawBar(canvasId, labels, data, label, color='#2563eb') {
 
 // ========== 行业资讯 ==========
 function renderIndustry() {
-  let html = '<div class="card"><div class="card-header"><h3>采集系统说明</h3></div>';
-  html += '<div style="padding:20px;font-size:14px;line-height:2">';
-  html += '<p>✅ <b>全自动运行</b>：GitHub Actions 每日 20:00 (北京时间) 自动采集，无需人工干预</p>';
-  html += '<p>✅ <b>零 Token 消耗</b>：纯 Python 脚本采集，不依赖 AI 接口，完全免费</p>';
-  html += '<p>✅ <b>永久链接</b>：托管于 GitHub Pages，链接永久不变</p>';
-  html += '<p>✅ <b>数据来源</b>：百度新闻搜索 + 搜狐新闻搜索 + 国家林业局官网</p>';
-  html += '<p>📊 <b>采集范围</b>：11 家重点企业每日搜索 + 5 家企业官网可达性抽查</p>';
-  html += '<p>⏰ <b>更新频率</b>：每日一次，每次约 2-3 分钟</p>';
+  let industryNews = collected.industry_news || [];
+  let html = '<div class="card"><div class="card-header"><h3>行业资讯（共 '+industryNews.length+' 条）</h3><span style="font-size:12px;color:var(--text-secondary)">竹材/竹制品/林业相关政策与市场动态</span></div>';
+
+  if (!industryNews.length) {
+    html += '<div style="padding:40px 20px;text-align:center;color:var(--text-secondary);font-size:14px">暂无行业资讯数据，将在下次自动采集时更新</div>';
+    html += '</div>';
+    document.getElementById('tabContent').innerHTML = html;
+    return;
+  }
+
+  html += '<div style="padding:0 20px">';
+  industryNews.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  industryNews.forEach(n=>{
+    html += '<div class="update-item">';
+    html += '<div class="up-header">';
+    html += `<div class="up-title"><a href="${n.url||'#'}" target="_blank">${n.title}</a></div>`;
+    html += `<span class="badge badge-gov">${n.source_label||'行业'}</span>`;
+    html += '</div>';
+    html += `<div class="up-meta"><span>${n.date||''}</span></div>`;
+    html += `<div class="up-summary">${n.summary||''}</div>`;
+    html += '</div>';
+  });
+  html += '</div></div>';
+
+  document.getElementById('tabContent').innerHTML = html;
+}
+
+// ========== 关于数据 ==========
+function renderAbout() {
+  let html = '';
+  // 数据概览卡片
+  html += '<div class="stats-row" style="margin-bottom:20px">';
+  const hasWeb = companies.filter(c=>c.website&&c.website.length>3).length;
+  const hasWx = companies.filter(c=>c.wechat&&c.wechat.length>2).length;
+  let totalPatents = companies.reduce((s,c)=>s+(c.patents||0),0);
+  let totalUpdates = 0; Object.values(collected).forEach(v => { if (v && v.updates) totalUpdates += v.updates.length; });
+  html += `<div class="stat-card"><div class="stat-icon si-green">📋</div><div class="stat-info"><div class="val">${companies.length}</div><div class="lab">监控企业总数</div></div></div>`;
+  html += `<div class="stat-card"><div class="stat-icon si-blue">🌐</div><div class="stat-info"><div class="val">${hasWeb}/${companies.length}</div><div class="lab">已收录官网</div></div></div>`;
+  html += `<div class="stat-card"><div class="stat-icon si-orange">💬</div><div class="stat-info"><div class="val">${hasWx}/${companies.length}</div><div class="lab">已知公众号</div></div></div>`;
+  html += `<div class="stat-card"><div class="stat-icon si-purple">📝</div><div class="stat-info"><div class="val">${totalPatents}</div><div class="lab">总专利数</div></div></div>`;
+  html += `<div class="stat-card"><div class="stat-icon si-green">📰</div><div class="stat-info"><div class="val">${totalUpdates}</div><div class="lab">已验证有效链接</div></div></div>`;
+  html += '</div>';
+
+  // 数据来源说明
+  html += '<div class="card"><div class="card-header"><h3>数据来源说明</h3></div>';
+  html += '<div style="padding:20px;font-size:14px;line-height:2.2">';
+  html += '<p><b>第三方新闻：</b>来自百度、搜狐、腾讯新闻、新华网等主流媒体，链接均已逐一访问验证，确保内容与标题一致。</p>';
+  html += '<p><b>官网信息：</b>来自企业官方网站，受动态加载限制，部分官网无法直接抓取。标注"需人工核查"。</p>';
+  html += '<p><b>企业信息：</b>来自企查查、爱企查等平台，仅作为背景参考，不做"最新动态"。</p>';
+  html += '</div></div>';
+
+  // 自动采集属性
+  html += '<div class="card"><div class="card-header"><h3>自动采集局限性</h3></div>';
+  html += '<div style="padding:20px;font-size:14px;line-height:2.2">';
+  html += '<ul style="padding-left:18px">';
+  html += '<li>国内企业官网普遍采用JavaScript动态渲染，全自动抓取覆盖率有限</li>';
+  html += '<li>第三方新闻链接时效性、收录均有人工判断</li>';
+  html += '<li>如需高准确率，可对重点企业（大庄、永裕、竹元等）定期进行人工核查补充</li>';
+  html += '</ul></div></div>';
+
+  // 每日更新说明
+  html += '<div class="card"><div class="card-header"><h3>每日自动更新</h3></div>';
+  html += '<div style="padding:20px;font-size:14px;line-height:2.2">';
+  html += '<p><b>更新时间：</b>' + (collected.collected_at ? collected.collected_at.slice(0,16).replace('T',' ') : '--') + '（北京时间）</p>';
+  html += '<p><b>采集范围：</b>' + totalUpdates + ' 条今日验证有效的动态</p>';
+  html += '<p><b>运行方式：</b>GitHub Actions 每日 20:00 自动触发 Python 采集脚本</p>';
+  html += '<p><b>费用：</b>完全免费，零 Token 消耗</p>';
   html += '<p style="margin-top:16px;color:var(--text-secondary)">如需手动触发更新，可访问 <a href="https://github.com/hen0114-tech/competitor-dashboard/actions" target="_blank">GitHub Actions 页面</a> 点击 Run workflow</p>';
   html += '</div></div>';
+
   document.getElementById('tabContent').innerHTML = html;
 }
 
