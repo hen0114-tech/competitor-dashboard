@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>竹材行业竞争对手动态看板</title>
+<style>
+:root {
+  --bg: #f5f6fa; --card-bg: #fff; --primary: #1a73e8;
+  --text: #1f2937; --text-secondary: #6b7280; --border: #e5e7eb;
+  --red: #dc2626; --green: #059669; --orange: #ea580c;
+  --radius: 12px; --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+.header { background:linear-gradient(135deg,#0f5132 0%,#198754 50%,#20c997 100%); color:#fff; padding:20px 32px; box-shadow:0 2px 8px rgba(0,0,0,.12); }
+.header-top { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+.header h1 { font-size:22px; font-weight:700; }
+.header-sub { font-size:13px; opacity:.85; margin-top:4px; }
+.header-stats { display:flex; gap:20px; flex-wrap:wrap; }
+.header-stat .num { font-size:28px; font-weight:800; }
+.header-stat .label { font-size:12px; opacity:.75; }
+.update-time { font-size:12px; opacity:.7; margin-top:8px; }
+.container { max-width:1400px; margin:0 auto; padding:20px 24px; }
+.stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:20px; }
+.stat-card { background:var(--card-bg); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow); display:flex; align-items:center; gap:14px; }
+.stat-icon { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+.si-green { background:#d1fae5; color:#059669; } .si-blue { background:#dbeafe; color:#2563eb; }
+.si-orange { background:#ffedd5; color:#ea580c; } .si-purple { background:#ede9fe; color:#7c3aed; }
+.stat-info .val { font-size:24px; font-weight:700; }
+.stat-info .lab { font-size:12px; color:var(--text-secondary); }
+.tabs { display:flex; gap:4px; margin-bottom:20px; border-bottom:2px solid var(--border); }
+.tab { padding:10px 20px; font-size:14px; font-weight:500; cursor:pointer; border:none; background:none; color:var(--text-secondary); border-bottom:2px solid transparent; margin-bottom:-2px; transition:all .2s; }
+.tab:hover,.tab.active { color:var(--primary); } .tab.active { border-bottom-color:var(--primary); }
+.filters { display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap; align-items:center; }
+.filters input,.filters select { padding:8px 14px; border:1px solid var(--border); border-radius:8px; font-size:13px; background:#fff; min-width:120px; }
+.filters input { flex:1; max-width:300px; }
+.badge { display:inline-flex; align-items:center; gap:4px; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:600; white-space:nowrap; }
+.badge-high { background:#fef2f2; color:#dc2626; } .badge-mid { background:#fff7ed; color:#ea580c; } .badge-low { background:#f0fdf4; color:#059669; }
+.badge-official { background:#dbeafe; color:#1d4ed8; } .badge-news { background:#fef3c7; color:#92400e; } .badge-gov { background:#ecfdf5; color:#065f46; }
+.card { background:var(--card-bg); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }
+.card-header { padding:16px 20px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+.card-header h3 { font-size:15px; font-weight:600; }
+.table-wrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+thead th { background:#f9fafb; padding:10px 14px; text-align:left; font-weight:600; font-size:12px; color:var(--text-secondary); border-bottom:1px solid var(--border); white-space:nowrap; }
+tbody td { padding:10px 14px; border-bottom:1px solid var(--border); vertical-align:middle; }
+tbody tr { transition:background .15s; cursor:pointer; }
+tbody tr:hover { background:#f0f7ff; }
+td.name-cell { font-weight:600; }
+td.name-cell .brand { font-size:11px; color:var(--primary); margin-left:6px; }
+td a { color:var(--primary); text-decoration:none; font-size:12px; }
+td a:hover { text-decoration:underline; }
+td .no-data { color:#ccc; font-size:12px; }
+.update-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--red); margin-right:5px; animation:pulse 1.5s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+.pagination { display:flex; justify-content:center; gap:6px; padding:14px; flex-wrap:wrap; }
+.pagination button { padding:6px 12px; border:1px solid var(--border); border-radius:6px; background:#fff; cursor:pointer; font-size:13px; }
+.pagination button.active { background:var(--primary); color:#fff; border-color:var(--primary); }
+.update-item { padding:14px 0; border-bottom:1px solid #f3f4f6; }
+.update-item:last-child { border-bottom:none; }
+.update-item .up-header { display:flex; align-items:flex-start; gap:8px; margin-bottom:6px; }
+.update-item .up-title { font-size:14px; font-weight:600; flex:1; }
+.update-item .up-title a { color:var(--text); text-decoration:none; }
+.update-item .up-title a:hover { color:var(--primary); }
+.update-item .up-meta { font-size:11px; color:var(--text-secondary); display:flex; gap:10px; margin-bottom:4px; flex-wrap:wrap; }
+.update-item .up-summary { font-size:12px; color:#4b5563; line-height:1.5; }
+.modal-bg { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.4); z-index:1000; justify-content:center; align-items:center; }
+.modal-bg.show { display:flex; }
+.modal { background:#fff; border-radius:var(--radius); max-width:700px; width:90%; max-height:85vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,.2); }
+.modal-header { padding:18px 24px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+.modal-header h3 { font-size:17px; } .modal-close { cursor:pointer; font-size:24px; color:var(--text-secondary); background:none; border:none; }
+.modal-body { padding:20px 24px; }
+.modal-body .info-row { display:flex; padding:8px 0; border-bottom:1px solid #f3f4f6; }
+.modal-body .info-label { width:80px; flex-shrink:0; color:var(--text-secondary); font-size:13px; }
+.modal-body .info-value { flex:1; font-size:13px; }
+.chart-wrap { padding:20px; }
+.chart-wrap canvas { max-height:350px; }
+.loading { text-align:center; padding:60px 20px; color:var(--text-secondary); font-size:15px; }
+footer { text-align:center; padding:30px; color:var(--text-secondary); font-size:12px; }
+.detail-updates { margin-top:16px; }
+.detail-updates h4 { font-size:14px; margin-bottom:10px; color:var(--primary); }
+@media (max-width:768px) {
+  .header { padding:16px; } .container { padding:12px; }
+  .header-stats { gap:12px; } .header-stat .num { font-size:22px; }
+  .filters { flex-direction:column; } .filters input { max-width:none; }
+  .tab { padding:8px 14px; font-size:13px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>竹材行业竞争对手动态看板</h1>
+      <div class="header-sub">AI自动采集 · GitHub Actions每日自动更新 · 数据来源：百度新闻/搜狐新闻/国家林业局</div>
+    </div>
+    <div class="header-stats">
+      <div class="header-stat"><div class="num" id="statTotal">--</div><div class="label">监控企业</div></div>
+      <div class="header-stat"><div class="num" id="statUpdates">--</div><div class="label">最新动态</div></div>
+      <div class="header-stat"><div class="num" id="statPatents">--</div><div class="label">总专利数</div></div>
+      <div class="header-stat"><div class="num" id="statWebsites">--</div><div class="label">有官网</div></div>
+    </div>
+  </div>
+  <div class="update-time" id="updateTime">数据加载中...</div>
+</div>
+
+<div class="container">
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-icon si-green">🏢</div><div class="stat-info"><div class="val" id="sTotal">--</div><div class="lab">监控企业总数</div></div></div>
+    <div class="stat-card"><div class="stat-icon si-blue">📰</div><div class="stat-info"><div class="val" id="sUpdates">--</div><div class="lab">今日采集动态</div></div></div>
+    <div class="stat-card"><div class="stat-icon si-orange">🔗</div><div class="stat-info"><div class="val" id="sWeb">--</div><div class="lab">已有官网</div></div></div>
+    <div class="stat-card"><div class="stat-icon si-purple">💬</div><div class="stat-info"><div class="val" id="sWechat">--</div><div class="lab">已知公众号</div></div></div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('companies')">企业列表</button>
+    <button class="tab" onclick="switchTab('updates')">最新动态</button>
+    <button class="tab" onclick="switchTab('stats')">统计分析</button>
+    <button class="tab" onclick="switchTab('industry')">行业资讯</button>
+  </div>
+
+  <div id="tabContent"><div class="loading">加载中...</div></div>
+</div>
+
+<footer>
+  竹材行业竞争对手动态看板 · 数据每日 20:00 自动更新 · 托管于 GitHub Pages · 永久免费
+</footer>
+
+<div class="modal-bg" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-header"><h3 id="modalTitle"></h3><button class="modal-close" onclick="closeModal()">×</button></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+let companies = [];
+let collected = {};
+let currentTab = 'companies';
+let currentPage = 1;
+const PAGE_SIZE = 15;
+
+// ========== 数据加载 ==========
+async function loadData() {
+  try {
+    const [compRes, collRes] = await Promise.all([
+      fetch('data/companies.json'),
+      fetch('data/latest.json')
+    ]);
+    companies = await compRes.json();
+    collected = await collRes.json();
+  } catch(e) {
+    document.getElementById('tabContent').innerHTML = '<div class="loading">数据加载失败，请刷新页面重试</div>';
+    console.error(e);
+    return;
+  }
+  updateHeader();
+  switchTab(currentTab);
+}
+
+function updateHeader() {
+  document.getElementById('statTotal').textContent = companies.length;
+  document.getElementById('statPatents').textContent = companies.reduce((s,c)=>s+(c.patents||0),0);
+  document.getElementById('statWebsites').textContent = companies.filter(c=>c.website&&c.website.length>3).length;
+  document.getElementById('sTotal').textContent = companies.length;
+  document.getElementById('sWeb').textContent = companies.filter(c=>c.website&&c.website.length>3).length + '/' + companies.length;
+  document.getElementById('sWechat').textContent = companies.filter(c=>c.wechat&&c.wechat.length>2).length + '/' + companies.length;
+
+  let totalUpdates = 0;
+  Object.values(collected).forEach(v => {
+    if (v && v.updates) totalUpdates += v.updates.length;
+  });
+  document.getElementById('statUpdates').textContent = totalUpdates;
+  document.getElementById('sUpdates').textContent = totalUpdates;
+
+  const at = collected.collected_at || '';
+  document.getElementById('updateTime').textContent = at ? `最近更新：${at.slice(0,16).replace('T',' ')}` : '数据加载完成';
+}
+
+// ========== Tab 切换 ==========
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.textContent.includes(getTabName(tab))));
+  currentPage = 1;
+  if (tab === 'companies') renderCompanies();
+  else if (tab === 'updates') renderUpdates();
+  else if (tab === 'stats') renderStats();
+  else if (tab === 'industry') renderIndustry();
+}
+
+function getTabName(tab) {
+  return {companies:'企业列表',updates:'最新动态',stats:'统计分析',industry:'行业资讯'}[tab];
+}
+
+// ========== 企业列表 ==========
+function renderCompanies() {
+  let filtered = [...companies];
+  const kw = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+  const prov = (document.getElementById('provFilter')?.value || '');
+  const pos = (document.getElementById('posFilter')?.value || '');
+  if (kw) filtered = filtered.filter(c=>c.full_name.toLowerCase().includes(kw)||(c.brand||'').toLowerCase().includes(kw));
+  if (prov) filtered = filtered.filter(c=>c.province&&c.province.includes(prov));
+  if (pos) filtered = filtered.filter(c=>(c.position||'').includes(pos));
+
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+  const start = (currentPage-1) * PAGE_SIZE;
+  const pageData = filtered.slice(start, start + PAGE_SIZE);
+  const hasUpdates = new Set();
+  Object.values(collected).forEach(v => { if (v && v.company_id && v.updates && v.updates.length) hasUpdates.add(v.company_id); });
+
+  const provinces = [...new Set(companies.map(c=>c.province).filter(Boolean))].sort();
+
+  let html = '';
+  html += '<div class="filters">';
+  html += `<input id="searchInput" placeholder="搜索公司名称/品牌..." oninput="currentPage=1;renderCompanies()" value="${kw}">`;
+  html += `<select id="provFilter" onchange="currentPage=1;renderCompanies()"><option value="">全部省份</option>${provinces.map(p=>`<option value="${p}" ${prov===p?'selected':''}>${p}</option>`).join('')}</select>`;
+  html += `<select id="posFilter" onchange="currentPage=1;renderCompanies()"><option value="">全部定位</option>`;
+  html += `<option value="高档" ${pos==='高档'?'selected':''}>高档</option><option value="中高" ${pos==='中高'?'selected':''}>中高</option><option value="中端" ${pos==='中端'?'selected':''}>中端</option><option value="低端" ${pos==='低端'?'selected':''}>低端</option></select>`;
+  html += `<span style="font-size:13px;color:var(--text-secondary)">共 ${filtered.length} 家</span>`;
+  html += '</div>';
+
+  html += '<div class="card"><div class="table-wrap"><table>';
+  html += '<thead><tr><th>#</th><th>公司名称</th><th>省份</th><th>品牌</th><th>定位</th><th>专利</th><th>官网</th><th>公众号</th><th>注册资本</th><th>动态</th></tr></thead><tbody>';
+
+  pageData.forEach((c,i)=>{
+    const posBadge = c.position==='高档'?'badge-high':c.position==='中高'?'badge-mid':c.position==='低端'?'badge-low':'';
+    html += `<tr onclick="showDetail(${c.id})">`;
+    html += `<td>${start+i+1}</td>`;
+    html += `<td class="name-cell">${c.full_name}<span class="brand">${c.brand||''}</span></td>`;
+    html += `<td>${c.province||''}</td>`;
+    html += `<td>${c.brand_name||''}</td>`;
+    html += `<td>${c.position ? '<span class="badge '+posBadge+'">'+c.position+'</span>' : ''}</td>`;
+    html += `<td>${c.patents||0}</td>`;
+    html += `<td>${c.website ? '<a href="'+c.website+'" target="_blank" onclick="event.stopPropagation()">访问</a>' : '<span class="no-data">-</span>'}</td>`;
+    html += `<td>${c.wechat||'<span class="no-data">-</span>'}</td>`;
+    html += `<td>${c.capital||''}</td>`;
+    html += `<td>${hasUpdates.has(c.id)?'<span class="update-dot"></span>有更新':'<span class="no-data">-</span>'}</td>`;
+    html += `</tr>`;
+  });
+  html += '</tbody></table></div>';
+
+  if (totalPages > 1) {
+    html += '<div class="pagination">';
+    for (let p=1;p<=totalPages;p++) html += `<button class="${p===currentPage?'active':''}" onclick="currentPage=${p};renderCompanies()">${p}</button>`;
+    html += '</div>';
+  }
+  html += '</div>';
+  document.getElementById('tabContent').innerHTML = html;
+}
+
+// ========== 最新动态 ==========
+function renderUpdates() {
+  let allUpdates = [];
+  Object.entries(collected).forEach(([k,v])=>{
+    if (!v || !v.updates || !Array.isArray(v.updates)) return;
+    v.updates.forEach(u=>{
+      allUpdates.push({
+        ...u,
+        company_id: v.company_id,
+        company_name: v.company_name
+      });
+    });
+  });
+  allUpdates.sort((a,b)=>b.date.localeCompare(a.date));
+
+  let html = '<div class="card"><div class="card-header"><h3>最新采集动态（共 '+allUpdates.length+' 条）</h3><span style="font-size:12px;color:var(--text-secondary)">按时间倒序，点击标题查看原文</span></div>';
+  html += '<div style="padding:0 20px">';
+  if (!allUpdates.length) html += '<div class="loading">暂无动态数据</div>';
+  allUpdates.forEach(u=>{
+    const sourceBadge = u.source_label==='官网'?'badge-official':u.source_label==='政府公告'?'badge-gov':'badge-news';
+    html += '<div class="update-item">';
+    html += '<div class="up-header">';
+    html += `<div class="up-title"><a href="${u.url||'#'}" target="_blank">${u.title}</a></div>`;
+    html += `<span class="badge ${sourceBadge}">${u.source_label||'新闻'}</span>`;
+    html += '</div>';
+    html += `<div class="up-meta"><span>${u.company_name||''}</span><span>${u.date||''}</span></div>`;
+    html += `<div class="up-summary">${u.summary||''}</div>`;
+    html += '</div>';
+  });
+  html += '</div></div>';
+
+  // 行业资讯
+  if (collected.industry_news && collected.industry_news.length) {
+    html += '<div class="card" style="margin-top:20px"><div class="card-header"><h3>行业资讯</h3></div><div style="padding:0 20px">';
+    collected.industry_news.forEach(n=>{
+      html += '<div class="update-item">';
+      html += '<div class="up-header">';
+      html += `<div class="up-title"><a href="${n.url||'#'}" target="_blank">${n.title}</a></div>`;
+      html += '<span class="badge badge-gov">行业</span>';
+      html += '</div>';
+      html += `<div class="up-meta"><span>${n.date||''}</span></div>`;
+      html += `<div class="up-summary">${n.summary||''}</div>`;
+      html += '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  document.getElementById('tabContent').innerHTML = html;
+}
+
+// ========== 统计分析 ==========
+function renderStats() {
+  let html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">';
+
+  // 省份分布
+  html += '<div class="card"><div class="card-header"><h3>省份分布 TOP10</h3></div><div class="chart-wrap"><canvas id="chartProv"></canvas></div></div>';
+  // 专利排名
+  html += '<div class="card"><div class="card-header"><h3>专利数量 TOP10</h3></div><div class="chart-wrap"><canvas id="chartPatent"></canvas></div></div>';
+  // 定位分布
+  html += '<div class="card"><div class="card-header"><h3>产品定位分布</h3></div><div class="chart-wrap"><canvas id="chartPos"></canvas></div></div>';
+  // 注册资本(万元)
+  const capData = companies.map(c=>{
+    const m = (c.capital||'').match(/([\d.]+)\s*(万|亿)/);
+    if (!m) return 0;
+    return m[2]==='亿' ? parseFloat(m[1])*10000 : parseFloat(m[1]);
+  }).filter(x=>x>0).sort((a,b)=>b-a);
+  html += '<div class="card"><div class="card-header"><h3>注册资本分布</h3></div><div class="chart-wrap"><canvas id="chartCap"></canvas></div></div>';
+  html += '</div>';
+
+  document.getElementById('tabContent').innerHTML = html;
+  setTimeout(drawCharts, 100);
+}
+
+function drawCharts() {
+  const provMap = {}; companies.forEach(c=>{const p=c.province||'未知'; provMap[p]=(provMap[p]||0)+1;});
+  const provSorted = Object.entries(provMap).sort((a,b)=>b[1]-a[1]).slice(0,10);
+
+  const patentSorted = companies.map(c=>({name:c.full_name.slice(0,12),p:c.patents||0})).sort((a,b)=>b.p-a.p).slice(0,10);
+
+  const posMap = {'高档':0,'中高':0,'中端':0,'低端':0}; companies.forEach(c=>{ if(c.position&&posMap.hasOwnProperty(c.position)) posMap[c.position]++; });
+
+  drawBar('chartProv', provSorted.map(x=>x[0]), provSorted.map(x=>x[1]), '企业数量');
+  drawBar('chartPatent', patentSorted.map(x=>x.name), patentSorted.map(x=>x.p), '专利数','#ea580c');
+  drawBar('chartPos', ['高档','中高','中端','低端'], [posMap['高档'],posMap['中高'],posMap['中端'],posMap['低端']], '企业数量','#059669');
+  drawBar('chartCap', capData.map((_,i)=>`${i+1}`), capData.slice(0,20), '万元','#7c3aed');
+}
+
+function drawBar(canvasId, labels, data, label, color='#2563eb') {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  new Chart(canvas, {
+    type:'bar',
+    data:{labels,datasets:[{label,data,backgroundColor:color+'99',borderColor:color,borderWidth:1}]},
+    options:{responsive:true,maintainAspectRatio:true,plugins:{legend:{display:false}}}
+  });
+}
+
+// ========== 行业资讯 ==========
+function renderIndustry() {
+  let html = '<div class="card"><div class="card-header"><h3>采集系统说明</h3></div>';
+  html += '<div style="padding:20px;font-size:14px;line-height:2">';
+  html += '<p>✅ <b>全自动运行</b>：GitHub Actions 每日 20:00 (北京时间) 自动采集，无需人工干预</p>';
+  html += '<p>✅ <b>零 Token 消耗</b>：纯 Python 脚本采集，不依赖 AI 接口，完全免费</p>';
+  html += '<p>✅ <b>永久链接</b>：托管于 GitHub Pages，链接永久不变</p>';
+  html += '<p>✅ <b>数据来源</b>：百度新闻搜索 + 搜狐新闻搜索 + 国家林业局官网</p>';
+  html += '<p>📊 <b>采集范围</b>：11 家重点企业每日搜索 + 5 家企业官网可达性抽查</p>';
+  html += '<p>⏰ <b>更新频率</b>：每日一次，每次约 2-3 分钟</p>';
+  html += '<p style="margin-top:16px;color:var(--text-secondary)">如需手动触发更新，可访问 <a href="https://github.com/hen0114-tech/competitor-dashboard/actions" target="_blank">GitHub Actions 页面</a> 点击 Run workflow</p>';
+  html += '</div></div>';
+  document.getElementById('tabContent').innerHTML = html;
+}
+
+// ========== 详情弹窗 ==========
+function showDetail(id) {
+  const c = companies.find(x=>x.id===id);
+  if (!c) return;
+  document.getElementById('modalTitle').textContent = c.full_name;
+  let html = '';
+  html += `<div class="info-row"><div class="info-label">品牌</div><div class="info-value">${c.brand_name||c.brand||'-'}</div></div>`;
+  html += `<div class="info-row"><div class="info-label">省份</div><div class="info-value">${c.province||'-'}</div></div>`;
+  html += `<div class="info-row"><div class="info-label">定位</div><div class="info-value">${c.position||'-'}</div></div>`;
+  html += `<div class="info-row"><div class="info-label">注册资本</div><div class="info-value">${c.capital||'-'}</div></div>`;
+  html += `<div class="info-row"><div class="info-label">专利</div><div class="info-value">${c.patents||0} 项</div></div>`;
+  html += `<div class="info-row"><div class="info-label">官网</div><div class="info-value">${c.website?'<a href="'+c.website+'" target="_blank">'+c.website+'</a>':'-'}</div></div>`;
+  html += `<div class="info-row"><div class="info-label">公众号</div><div class="info-value">${c.wechat||'-'}</div></div>`;
+  html += `<div class="info-row"><div class="info-label">主营产品</div><div class="info-value">${c.products||'-'}</div></div>`;
+  if (c.notes) html += `<div class="info-row"><div class="info-label">备注</div><div class="info-value">${c.notes}</div></div>`;
+
+  // 该公司的动态
+  const compUpdates = collected[String(id)];
+  if (compUpdates && compUpdates.updates && compUpdates.updates.length) {
+    html += '<div class="detail-updates"><h4>最新动态</h4>';
+    compUpdates.updates.forEach(u=>{
+      html += `<div class="update-item">`;
+      html += `<div class="up-title"><a href="${u.url||'#'}" target="_blank">${u.title}</a></div>`;
+      html += `<div class="up-meta">${u.date||''} · ${u.source_label||''}</div>`;
+      html += `<div class="up-summary">${u.summary||''}</div>`;
+      html += `</div>`;
+    });
+    html += '</div>';
+  }
+  document.getElementById('modalBody').innerHTML = html;
+  document.getElementById('modal').classList.add('show');
+}
+
+function closeModal() { document.getElementById('modal').classList.remove('show'); }
+
+// ========== 入口 ==========
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+loadData();
+</script>
+</body>
+</html>
