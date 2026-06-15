@@ -1,5 +1,33 @@
 {
-  "collected_at": "2026-06-15T03:00:48.340505",
-  "total_updates": 0,
-  "note": "本次采集未能获取新数据，仅更新时间戳"
+  "site_30": {
+    "company_id": 30,
+    "company_name": "江西省崇义华森竹业有限公司",
+    "website_status": {
+      "url": "http://www.jxshszy.com/",
+      "accessible": true,
+      "status": 403
+    }
+  },
+  "site_33": {
+    "company_id": 33,
+    "company_name": "安吉辉篁竹业有限公司",
+    "website_status": {
+      "url": "http://www.hh-bamboo.com/",
+      "accessible": true,
+      "status": 200,
+      "title": "Fsc-Certified Bamboo Flooring, Bamboo Wallboard Manufacturers"
+    }
+  },
+  "site_34": {
+    "company_id": 34,
+    "company_name": "宜兴市博远竹木制品有限公司",
+    "website_status": {
+      "url": "http://www.sun-flooring.com/",
+      "accessible": true,
+      "status": 200,
+      "title": "尚诺竹地板官网 用竹之美征服世界"
+    }
+  },
+  "collected_at": "2026-06-15T21:50:20.890709",
+  "total_updates": 0
 }
