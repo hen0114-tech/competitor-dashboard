@@ -6,12 +6,14 @@
     "full_name": "浙江大庄实业集团有限公司",
     "brand_name": "大庄、dasso",
     "capital": "616万(美元)",
-    "patents": 39,
+    "patents": 44,
     "website": "https://www.dassochina.com/",
     "wechat": "大庄竹材 | dassochina",
     "position": "高档",
     "products": "高耐系列、普通浅炭系列、浅炭瓷态",
-    "notes": "3000mm深灰色；户外瓷态新品3050x155x25mm"
+    "notes": "3000mm深灰色；户外瓷态新品3050x155x25mm",
+    "patent_updated": "2026-06-15",
+    "patent_source": "爱企查"
   },
   {
     "id": 2,
@@ -48,12 +50,14 @@
     "full_name": "福建金竹竹业有限公司",
     "brand_name": "金竹竹业、竹之然、REBO瑞珀",
     "capital": "5500万元",
-    "patents": 136,
+    "patents": 171,
     "website": "http://www.fjgoldenbamboo.com/",
     "wechat": "金竹竹业 | gh_720c713fb273",
     "position": "中高",
     "products": "室外重竹、室内普竹",
-    "notes": ""
+    "notes": "",
+    "patent_updated": "2026-06-15",
+    "patent_source": "PatentGuru"
   },
   {
     "id": 5,
@@ -62,12 +66,14 @@
     "full_name": "浙江永裕家居股份有限公司",
     "brand_name": "硅化竹",
     "capital": "9788万元",
-    "patents": 114,
+    "patents": 126,
     "website": "https://www.yoyucn.com/",
     "wechat": "永裕家居股份 | 永裕地板",
     "position": "高档",
     "products": "室内重竹、户外硅化竹、SPC",
-    "notes": "户外硅化板"
+    "notes": "户外硅化板",
+    "patent_updated": "2026-06-15",
+    "patent_source": "爱企查"
   },
   {
     "id": 6,
@@ -104,12 +110,14 @@
     "full_name": "福建吉兴竹业有限公司",
     "brand_name": "吉兴竹业",
     "capital": "5000万元",
-    "patents": 30,
+    "patents": 43,
     "website": "http://www.fjjxbamboo.com/",
     "wechat": "吉兴竹业 | fjjxbamboo",
     "position": "中端",
     "products": "高耐竹深碳、浅碳系列",
-    "notes": "吉兴→润竹→永裕"
+    "notes": "吉兴→润竹→永裕",
+    "patent_updated": "2026-06-15",
+    "patent_source": "PatentGuru"
   },
   {
     "id": 9,
@@ -118,12 +126,14 @@
     "full_name": "福建建瓯市吉丰竹业有限公司",
     "brand_name": "吉丰",
     "capital": "1000万元",
-    "patents": 18,
+    "patents": 20,
     "website": "http://www.fjjfzy.com/",
     "wechat": "",
     "position": "中端",
     "products": "户外高耐系列、户外浅碳系列、户外竹木栏杆系列",
-    "notes": ""
+    "notes": "",
+    "patent_updated": "2026-06-15",
+    "patent_source": "爱企查"
   },
   {
     "id": 10,
@@ -146,12 +156,14 @@
     "full_name": "连城县竹匠新材料有限公司",
     "brand_name": "竹匠新材",
     "capital": "1000万元",
-    "patents": 7,
+    "patents": 18,
     "website": "http://www.fjlczj.com/",
     "wechat": "连城县竹匠新材料有限公司 | gh_a42cb69efe58",
     "position": "中低端",
     "products": "户外重竹地板、墙板、格栅、扶手、栏杆",
-    "notes": ""
+    "notes": "",
+    "patent_updated": "2026-06-15",
+    "patent_source": "爱企查"
   },
   {
     "id": 12,
@@ -244,12 +256,14 @@
     "full_name": "宣城宏宇竹业有限公司",
     "brand_name": "箐刚竹",
     "capital": "1008万元",
-    "patents": 15,
+    "patents": 26,
     "website": "http://www.homeyoun.com/",
     "wechat": "",
     "position": "高档",
     "products": "户外竹木地板、竹木护栏和扶手板、格栅和墙板",
-    "notes": ""
+    "notes": "",
+    "patent_updated": "2026-06-15",
+    "patent_source": "PatentGuru"
   },
   {
     "id": 18,
@@ -263,7 +277,9 @@
     "wechat": "竹元科技 | bamber2010",
     "position": "高端",
     "products": "竹钢家具、竹钢门窗、竹钢户内外地板、竹钢装饰用材、竹钢景观用材",
-    "notes": ""
+    "notes": "",
+    "patent_updated": "2026-06-15",
+    "patent_source": "官网"
   },
   {
     "id": 19,
@@ -272,12 +288,14 @@
     "full_name": "江西南丰振宇实业集团有限公司",
     "brand_name": "振宇",
     "capital": "4972万元",
-    "patents": 228,
+    "patents": 239,
     "website": "https://www.zhenyugroup.com/",
     "wechat": "",
     "position": "",
     "products": "生态复合板、竹纤维地板、竹纤维户外板、竹凉席、竹家具",
-    "notes": "冷压重组竹"
+    "notes": "冷压重组竹",
+    "patent_updated": "2026-06-15",
+    "patent_source": "爱企查"
   },
   {
     "id": 20,
