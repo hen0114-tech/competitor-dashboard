@@ -27,7 +27,12 @@ jobs:
 
       - name: Run collector
         run: python scripts/collector.py
-        continue-on-error: true
+
+      - name: Ensure data updated
+        run: |
+          if [ ! -f data/latest.json ]; then
+            echo '{"collected_at":"'$(date -Iseconds)'","total_updates":0}' > data/latest.json
+          fi
 
       - name: Commit and push if changed
         run: |
