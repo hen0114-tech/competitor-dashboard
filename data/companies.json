@@ -168,6 +168,20 @@
     "notes": ""
   },
   {
+    "id": 40,
+    "province": "福建南平",
+    "brand": "熊宝",
+    "full_name": "福建熊宝科技有限公司",
+    "brand_name": "熊宝",
+    "capital": "1000万元",
+    "patents": 0,
+    "website": "http://www.fujianxiongbao.com/",
+    "wechat": "",
+    "position": "",
+    "products": "",
+    "notes": "省级创新型中小企业(2025)，户外重竹生产项目是当地林产工业重点项目，已补全网址"
+  },
+  {
     "id": 13,
     "province": "安徽宣城",
     "brand": "尧龙",
@@ -544,19 +558,5 @@
     "position": "",
     "products": "",
     "notes": ""
-  },
-  {
-    "id": 40,
-    "province": "福建南平",
-    "brand": "熊宝",
-    "full_name": "福建熊宝科技有限公司",
-    "brand_name": "熊宝",
-    "capital": "1000万元",
-    "patents": 0,
-    "website": "http://www.fujianxiongbao.com/",
-    "wechat": "",
-    "position": "",
-    "products": "",
-    "notes": "省级创新型中小企业(2025)，户外重竹生产项目是当地林产工业重点项目，已补全网址"
   }
 ]
