@@ -219,7 +219,7 @@ function renderCompanies() {
   html += '</div>';
 
   html += '<div class="card"><div class="table-wrap"><table>';
-  html += '<thead><tr><th>#</th><th>公司名称</th><th>省份</th><th>品牌</th><th>官网</th><th>公众号</th><th>注册资本</th><th>动态</th></tr></thead><tbody>';
+  html += '<thead><tr><th>#</th><th>公司名称</th><th>省份</th><th>品牌</th><th>专利</th><th>官网</th><th>公众号</th><th>注册资本</th><th>动态</th></tr></thead><tbody>';
 
   pageData.forEach((c,i)=>{
     html += `<tr onclick="showDetail(${c.id})">`;
@@ -227,6 +227,7 @@ function renderCompanies() {
     html += `<td class="name-cell">${c.full_name}<span class="brand">${c.brand||''}</span></td>`;
     html += `<td>${c.province||''}</td>`;
     html += `<td>${c.brand_name||''}</td>`;
+    html += `<td><span class="no-data">-</span></td>`;
     html += `<td>${c.website ? '<a href="'+c.website+'" target="_blank" onclick="event.stopPropagation()">访问</a>' : '<span class="no-data">-</span>'}</td>`;
     html += `<td>${c.wechat||'<span class="no-data">-</span>'}</td>`;
     html += `<td>${c.capital||''}</td>`;
