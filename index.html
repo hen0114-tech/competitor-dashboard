@@ -203,7 +203,7 @@ function renderCompanies() {
   const kw = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
   const prov = (document.getElementById('provFilter')?.value || '');
   if (kw) filtered = filtered.filter(c=>c.full_name.toLowerCase().includes(kw)||(c.brand||'').toLowerCase().includes(kw));
-  if (prov) filtered = filtered.filter(c=>c.province&&c.province.includes(prov));
+  if (prov) filtered = filtered.filter(c=>c.province&&c.province.slice(0,2)===prov);
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const start = (currentPage-1) * PAGE_SIZE;
@@ -211,7 +211,7 @@ function renderCompanies() {
   const hasUpdates = new Set();
   Object.values(collected).forEach(v => { if (v && v.company_id && v.updates && v.updates.length) hasUpdates.add(v.company_id); });
 
-  const provinces = [...new Set(companies.map(c=>c.province).filter(Boolean))].sort();
+  const provinces = [...new Set(companies.map(c=>c.province?.slice(0,2)).filter(Boolean))].sort();
 
   let html = '';
   html += '<div class="filters">';
