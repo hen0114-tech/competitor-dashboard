@@ -147,6 +147,17 @@ def check_website(web_url: str) -> dict:
 
 
 def main():
+    try:
+        _main()
+    except Exception as e:
+        print(f"\n⚠️ 采集异常: {e}")
+        import traceback
+        traceback.print_exc()
+        # 即使采集失败也更新时间戳
+        _save_minimal()
+
+
+def _main():
     # 加载公司列表
     with open(COMPANIES_FILE, "r", encoding="utf-8") as f:
         companies = json.load(f)
@@ -233,6 +244,22 @@ def main():
     print(f"\n✅ 采集完成：{total_updates} 条新闻动态")
     print(f"   每日数据: {output_file}")
     print(f"   看板数据: {latest_file}")
+
+
+def _save_minimal():
+    """即使采集完全失败，也保存最小时间戳文件，确保看板显示最新更新时间"""
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    COLLECTED_DIR.mkdir(parents=True, exist_ok=True)
+    minimal = {
+        "collected_at": datetime.now().isoformat(),
+        "total_updates": 0,
+        "note": "本次采集未能获取新数据，仅更新时间戳"
+    }
+    with open(COLLECTED_DIR / f"{TODAY}.json", "w", encoding="utf-8") as f:
+        json.dump(minimal, f, ensure_ascii=False, indent=2)
+    with open(DATA_DIR / "latest.json", "w", encoding="utf-8") as f:
+        json.dump(minimal, f, ensure_ascii=False, indent=2)
+    print(f"\n⚠️ 仅更新时间戳: {minimal['collected_at']}")
 
 
 if __name__ == "__main__":
