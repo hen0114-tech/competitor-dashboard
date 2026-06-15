@@ -202,10 +202,8 @@ function renderCompanies() {
   let filtered = [...companies];
   const kw = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
   const prov = (document.getElementById('provFilter')?.value || '');
-  const pos = (document.getElementById('posFilter')?.value || '');
   if (kw) filtered = filtered.filter(c=>c.full_name.toLowerCase().includes(kw)||(c.brand||'').toLowerCase().includes(kw));
   if (prov) filtered = filtered.filter(c=>c.province&&c.province.includes(prov));
-  if (pos) filtered = filtered.filter(c=>(c.position||'').includes(pos));
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const start = (currentPage-1) * PAGE_SIZE;
@@ -219,22 +217,18 @@ function renderCompanies() {
   html += '<div class="filters">';
   html += `<input id="searchInput" placeholder="搜索公司名称/品牌..." oninput="currentPage=1;renderCompanies()" value="${kw}">`;
   html += `<select id="provFilter" onchange="currentPage=1;renderCompanies()"><option value="">全部省份</option>${provinces.map(p=>`<option value="${p}" ${prov===p?'selected':''}>${p}</option>`).join('')}</select>`;
-  html += `<select id="posFilter" onchange="currentPage=1;renderCompanies()"><option value="">全部定位</option>`;
-  html += `<option value="高档" ${pos==='高档'?'selected':''}>高档</option><option value="中高" ${pos==='中高'?'selected':''}>中高</option><option value="中端" ${pos==='中端'?'selected':''}>中端</option><option value="低端" ${pos==='低端'?'selected':''}>低端</option></select>`;
   html += `<span style="font-size:13px;color:var(--text-secondary)">共 ${filtered.length} 家</span>`;
   html += '</div>';
 
   html += '<div class="card"><div class="table-wrap"><table>';
-  html += '<thead><tr><th>#</th><th>公司名称</th><th>省份</th><th>品牌</th><th>定位</th><th>专利</th><th>官网</th><th>公众号</th><th>注册资本</th><th>动态</th></tr></thead><tbody>';
+  html += '<thead><tr><th>#</th><th>公司名称</th><th>省份</th><th>品牌</th><th>专利</th><th>官网</th><th>公众号</th><th>注册资本</th><th>动态</th></tr></thead><tbody>';
 
   pageData.forEach((c,i)=>{
-    const posBadge = c.position==='高档'?'badge-high':c.position==='中高'?'badge-mid':c.position==='低端'?'badge-low':'';
     html += `<tr onclick="showDetail(${c.id})">`;
     html += `<td>${start+i+1}</td>`;
     html += `<td class="name-cell">${c.full_name}<span class="brand">${c.brand||''}</span></td>`;
     html += `<td>${c.province||''}</td>`;
     html += `<td>${c.brand_name||''}</td>`;
-    html += `<td>${c.position ? '<span class="badge '+posBadge+'">'+c.position+'</span>' : ''}</td>`;
     html += `<td>${c.patents||0}</td>`;
     html += `<td>${c.website ? '<a href="'+c.website+'" target="_blank" onclick="event.stopPropagation()">访问</a>' : '<span class="no-data">-</span>'}</td>`;
     html += `<td>${c.wechat||'<span class="no-data">-</span>'}</td>`;
