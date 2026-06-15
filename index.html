@@ -99,7 +99,6 @@ footer { text-align:center; padding:30px; color:var(--text-secondary); font-size
     <div class="header-stats">
       <div class="header-stat"><div class="num" id="statTotal">--</div><div class="label">监控企业</div></div>
       <div class="header-stat"><div class="num" id="statUpdates">--</div><div class="label">最新动态</div></div>
-      <div class="header-stat"><div class="num" id="statPatents">--</div><div class="label">总专利数</div></div>
       <div class="header-stat"><div class="num" id="statWebsites">--</div><div class="label">有官网</div></div>
     </div>
   </div>
@@ -164,7 +163,6 @@ async function loadData() {
 
 function updateHeader() {
   document.getElementById('statTotal').textContent = companies.length;
-  document.getElementById('statPatents').textContent = companies.reduce((s,c)=>s+(c.patents||0),0);
   document.getElementById('statWebsites').textContent = companies.filter(c=>c.website&&c.website.length>3).length;
   document.getElementById('sTotal').textContent = companies.length;
   document.getElementById('sWeb').textContent = companies.filter(c=>c.website&&c.website.length>3).length + '/' + companies.length;
@@ -221,7 +219,7 @@ function renderCompanies() {
   html += '</div>';
 
   html += '<div class="card"><div class="table-wrap"><table>';
-  html += '<thead><tr><th>#</th><th>公司名称</th><th>省份</th><th>品牌</th><th>专利</th><th>官网</th><th>公众号</th><th>注册资本</th><th>动态</th></tr></thead><tbody>';
+  html += '<thead><tr><th>#</th><th>公司名称</th><th>省份</th><th>品牌</th><th>官网</th><th>公众号</th><th>注册资本</th><th>动态</th></tr></thead><tbody>';
 
   pageData.forEach((c,i)=>{
     html += `<tr onclick="showDetail(${c.id})">`;
@@ -229,7 +227,6 @@ function renderCompanies() {
     html += `<td class="name-cell">${c.full_name}<span class="brand">${c.brand||''}</span></td>`;
     html += `<td>${c.province||''}</td>`;
     html += `<td>${c.brand_name||''}</td>`;
-    html += `<td>${c.patents||0}</td>`;
     html += `<td>${c.website ? '<a href="'+c.website+'" target="_blank" onclick="event.stopPropagation()">访问</a>' : '<span class="no-data">-</span>'}</td>`;
     html += `<td>${c.wechat||'<span class="no-data">-</span>'}</td>`;
     html += `<td>${c.capital||''}</td>`;
@@ -287,8 +284,6 @@ function renderStats() {
 
   // 省份分布
   html += '<div class="card"><div class="card-header"><h3>省份分布 TOP10</h3></div><div class="chart-wrap"><canvas id="chartProv"></canvas></div></div>';
-  // 专利排名
-  html += '<div class="card"><div class="card-header"><h3>专利数量 TOP10</h3></div><div class="chart-wrap"><canvas id="chartPatent"></canvas></div></div>';
   // 定位分布
   html += '<div class="card"><div class="card-header"><h3>产品定位分布</h3></div><div class="chart-wrap"><canvas id="chartPos"></canvas></div></div>';
   // 注册资本(万元)
@@ -308,12 +303,9 @@ function drawCharts() {
   const provMap = {}; companies.forEach(c=>{const p=c.province||'未知'; provMap[p]=(provMap[p]||0)+1;});
   const provSorted = Object.entries(provMap).sort((a,b)=>b[1]-a[1]).slice(0,10);
 
-  const patentSorted = companies.map(c=>({name:c.full_name.slice(0,12),p:c.patents||0})).sort((a,b)=>b.p-a.p).slice(0,10);
-
   const posMap = {'高档':0,'中高':0,'中端':0,'低端':0}; companies.forEach(c=>{ if(c.position&&posMap.hasOwnProperty(c.position)) posMap[c.position]++; });
 
   drawBar('chartProv', provSorted.map(x=>x[0]), provSorted.map(x=>x[1]), '企业数量');
-  drawBar('chartPatent', patentSorted.map(x=>x.name), patentSorted.map(x=>x.p), '专利数','#ea580c');
   drawBar('chartPos', ['高档','中高','中端','低端'], [posMap['高档'],posMap['中高'],posMap['中端'],posMap['低端']], '企业数量','#059669');
   drawBar('chartCap', capData.map((_,i)=>`${i+1}`), capData.slice(0,20), '万元','#7c3aed');
 }
@@ -364,12 +356,10 @@ function renderAbout() {
   html += '<div class="stats-row" style="margin-bottom:20px">';
   const hasWeb = companies.filter(c=>c.website&&c.website.length>3).length;
   const hasWx = companies.filter(c=>c.wechat&&c.wechat.length>2).length;
-  let totalPatents = companies.reduce((s,c)=>s+(c.patents||0),0);
   let totalUpdates = 0; Object.values(collected).forEach(v => { if (v && v.updates) totalUpdates += v.updates.length; });
   html += `<div class="stat-card"><div class="stat-icon si-green">📋</div><div class="stat-info"><div class="val">${companies.length}</div><div class="lab">监控企业总数</div></div></div>`;
   html += `<div class="stat-card"><div class="stat-icon si-blue">🌐</div><div class="stat-info"><div class="val">${hasWeb}/${companies.length}</div><div class="lab">已收录官网</div></div></div>`;
   html += `<div class="stat-card"><div class="stat-icon si-orange">💬</div><div class="stat-info"><div class="val">${hasWx}/${companies.length}</div><div class="lab">已知公众号</div></div></div>`;
-  html += `<div class="stat-card"><div class="stat-icon si-purple">📝</div><div class="stat-info"><div class="val">${totalPatents}</div><div class="lab">总专利数</div></div></div>`;
   html += `<div class="stat-card"><div class="stat-icon si-green">📰</div><div class="stat-info"><div class="val">${totalUpdates}</div><div class="lab">已验证有效链接</div></div></div>`;
   html += '</div>';
 
@@ -413,7 +403,6 @@ function showDetail(id) {
   html += `<div class="info-row"><div class="info-label">省份</div><div class="info-value">${c.province||'-'}</div></div>`;
   html += `<div class="info-row"><div class="info-label">定位</div><div class="info-value">${c.position||'-'}</div></div>`;
   html += `<div class="info-row"><div class="info-label">注册资本</div><div class="info-value">${c.capital||'-'}</div></div>`;
-  html += `<div class="info-row"><div class="info-label">专利</div><div class="info-value">${c.patents||0} 项</div></div>`;
   html += `<div class="info-row"><div class="info-label">官网</div><div class="info-value">${c.website?'<a href="'+c.website+'" target="_blank">'+c.website+'</a>':'-'}</div></div>`;
   html += `<div class="info-row"><div class="info-label">公众号</div><div class="info-value">${c.wechat||'-'}</div></div>`;
   html += `<div class="info-row"><div class="info-label">主营产品</div><div class="info-value">${c.products||'-'}</div></div>`;
