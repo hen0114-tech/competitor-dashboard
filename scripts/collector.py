@@ -28,6 +28,8 @@ DATA_DIR = BASE_DIR / "data"
 COLLECTED_DIR = DATA_DIR / "collected"
 COMPANIES_FILE = DATA_DIR / "companies.json"
 TODAY = datetime.now().strftime("%Y-%m-%d")
+MAX_ARTICLE_AGE_DAYS = 30  # 只保留一个月内的文章
+MAX_ARTICLES_PER_SITE = 3  # 每家官网最多保留3篇最新文章
 
 # 行业RSS/新闻源
 INDUSTRY_SOURCES = [
@@ -113,8 +115,8 @@ def fetch_html(url: str, timeout: int = 10) -> tuple:
         return None, False
 
 
-def find_date_near(html: str, href: str) -> str:
-    """在链接附近查找发表日期"""
+def find_date_near(html: str, href: str) -> str | None:
+    """在链接附近查找发表日期，超过30天的返回None"""
     pos = html.find(href)
     if pos < 0:
         pos = 0
@@ -132,13 +134,17 @@ def find_date_near(html: str, href: str) -> str:
         if m:
             try:
                 y, mon, d = int(m[1]), int(m[2]), int(m[3])
-                return f"{y:04d}-{mon:02d}-{d:02d}"
+                dt = datetime(y, mon, d)
+                cutoff = datetime.now() - timedelta(days=MAX_ARTICLE_AGE_DAYS)
+                if dt < cutoff:
+                    return None  # 超过30天，丢弃
+                return dt.strftime("%Y-%m-%d")
             except ValueError:
                 pass
-    return TODAY  # 找不到日期就用今天
+    return None  # 找不到日期也丢弃，避免保留无日期旧文
 
 
-def extract_articles(html: str, base_url: str, max_articles: int = 8) -> list[dict]:
+def extract_articles(html: str, base_url: str, max_articles: int = MAX_ARTICLES_PER_SITE) -> list[dict]:
     """
     从 HTML 中提取文章列表。
     策略：
@@ -191,6 +197,8 @@ def extract_articles(html: str, base_url: str, max_articles: int = 8) -> list[di
                 continue
 
             pub_date = find_date_near(block, href)
+            if pub_date is None:
+                continue  # 超过30天或找不到日期，跳过
             seen_urls.add(full_url)
             articles.append({
                 "title": text,
@@ -550,10 +558,58 @@ def _main():
     print("└───────────────────────────────────────────\n")
 
     # ================================================================
+    # 保存前过滤：只保留一个月内的文章，每家最多3篇
+    # ================================================================
+    cutoff_date = datetime.now() - timedelta(days=MAX_ARTICLE_AGE_DAYS)
+
+    filtered_total = 0
+    keys_to_remove = []
+
+    for key, val in collected.items():
+        if key in ("collected_at", "total_updates", "industry_news"):
+            continue
+        if "updates" not in val:
+            continue
+
+        articles = val.get("updates", [])
+        fresh_articles = []
+        seen = set()
+
+        for a in articles:
+            date_str = a.get("date", "")
+            if not date_str:
+                continue
+            try:
+                dt = datetime.strptime(date_str[:10], "%Y-%m-%d")
+            except ValueError:
+                try:
+                    dt = datetime.strptime(date_str, "%Y年%m月%d日")
+                except ValueError:
+                    continue
+            if dt >= cutoff_date:
+                unique_key = a.get("url", a.get("title", ""))
+                if unique_key not in seen:
+                    seen.add(unique_key)
+                    fresh_articles.append(a)
+
+        if fresh_articles:
+            fresh_articles.sort(key=lambda x: x.get("date", ""), reverse=True)
+            fresh_articles = fresh_articles[:MAX_ARTICLES_PER_SITE]
+            val["updates"] = fresh_articles
+            val["total"] = len(fresh_articles)
+            filtered_total += len(fresh_articles)
+        else:
+            keys_to_remove.append(key)
+
+    for key in keys_to_remove:
+        del collected[key]
+
+    collected["total_updates"] = filtered_total
+
+    # ================================================================
     # 保存
     # ================================================================
     collected["collected_at"] = datetime.now().isoformat()
-    collected["total_updates"] = total_updates
 
     # 每日数据
     COLLECTED_DIR.mkdir(parents=True, exist_ok=True)
@@ -566,7 +622,7 @@ def _main():
     with open(latest_file, "w", encoding="utf-8") as f:
         json.dump(collected, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ 采集完成：{total_updates} 条动态")
+    print(f"✅ 采集完成：{filtered_total} 条新动态（30天内）")
     print(f"   每日数据: {output_file}")
     print(f"   看板数据: {latest_file}")
 
