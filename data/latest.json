@@ -2,7 +2,7 @@
   "1": {
     "company_id": 1,
     "company_name": "浙江大庄实业集团有限公司",
-    "collected_at": "2026-06-18T09:11:28.896362",
+    "collected_at": "2026-06-18T20:42:35.386464",
     "updates": [
       {
         "title": "官网 https://www.dassochina.com 为JS动态渲染，需人工查看",
@@ -18,7 +18,7 @@
   "2": {
     "company_id": 2,
     "company_name": "浙江新海业竹科技有限公司",
-    "collected_at": "2026-06-18T09:11:29.900886",
+    "collected_at": "2026-06-18T20:42:36.337285",
     "updates": [
       {
         "title": "官网 http://www.feishibamboo.cn 当前无法访问",
@@ -34,7 +34,7 @@
   "3": {
     "company_id": 3,
     "company_name": "福建省庄禾竹业科技有限公司",
-    "collected_at": "2026-06-18T09:11:31.436154",
+    "collected_at": "2026-06-18T20:42:37.795235",
     "updates": [
       {
         "title": "官网 http://www.zhuart.net 当前无法访问",
@@ -50,7 +50,7 @@
   "6": {
     "company_id": 6,
     "company_name": "桂东众意竹木开发有限公司",
-    "collected_at": "2026-06-18T09:11:54.647784",
+    "collected_at": "2026-06-18T20:42:57.838189",
     "updates": [
       {
         "title": "官网 http://zhongyizhumu.cn 当前无法访问",
@@ -66,71 +66,36 @@
   "7": {
     "company_id": 7,
     "company_name": "福建省有竹科技有限公司",
-    "collected_at": "2026-06-18T09:12:01.601789",
+    "collected_at": "2026-06-18T20:43:03.237928",
     "updates": [
       {
-        "title": " ææ±å¸äººæ°æ³é¢å ³äºææ±å¸éå­éé¹å¤´æä½å® æ¿å°äº§åå®¤å é¨åå®¶å ·å®¶çµï¼ç¬¬äºæ¬¡æåï¼çå ¬å2026-06-18 15:30:09",
+        "title": " ææ±å¸äººæ°æ³é¢å ³äºææ±å¸éå­éé¹å¤´æä½å® æ¿å°äº§åå®¤å é¨åå®¶å ·å®¶çµï¼ç¬¬äºæ¬¡æåï¼çå ¬å2026-06-19 03:30:08",
         "url": "http://www.voyabamboo.com/news/181696.html",
-        "date": "2026-06-18",
+        "date": "2026-06-19",
         "source": "官网",
         "source_label": "官网"
       },
       {
-        "title": " éåºå¸æ±æ´¥åºäººæ°æ³é¢å ³äºéåºå¸æ±æ´¥åºå æ±è¡éæ»¨æ±è·¯31å¹¢261å·åå®¤å å¯ç§»å¨å®¶å ·å®¶çµï¼ååï¼çå ¬å2026-06-18 15:30:09",
+        "title": " éåºå¸æ±æ´¥åºäººæ°æ³é¢å ³äºéåºå¸æ±æ´¥åºå æ±è¡éæ»¨æ±è·¯31å¹¢261å·åå®¤å å¯ç§»å¨å®¶å ·å®¶çµï¼ååï¼çå ¬å2026-06-19 03:30:08",
         "url": "http://www.voyabamboo.com/news/181695.html",
-        "date": "2026-06-18",
+        "date": "2026-06-19",
         "source": "官网",
         "source_label": "官网"
       },
       {
-        "title": " éåºå¸åç¢åºäººæ°æ³é¢å ³äºéåºå¸åç¢åºåçè·¯175å·10-12æ¿å±åå®¤å é¨åå®¶å ·å®¶çµï¼ååï¼çå ¬å2026-06-18 15:30:09",
+        "title": " éåºå¸åç¢åºäººæ°æ³é¢å ³äºéåºå¸åç¢åºåçè·¯175å·10-12æ¿å±åå®¤å é¨åå®¶å ·å®¶çµï¼ååï¼çå ¬å2026-06-19 03:30:08",
         "url": "http://www.voyabamboo.com/news/181694.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": " æé½å¸é¦æ±åºäººæ°æ³é¢å ³äºéè¥¿çè¥¿å®å¸é«æ°åºæ²£æ §åè·¯34å·1å¹¢11609å®¤æ¿å±åå®¤å å®¶å ·ï¼ååï¼çå ¬å2026-06-18 15:30:09",
-        "url": "http://www.voyabamboo.com/news/181693.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": " éåºå¸æ¸ååºäººæ°æ³é¢å ³äºå¤§è¶³åºé¾å²è¡éåäºå¤åç¯è·¯ç½é¹¤æå°åº1å¹¢7-6å·åå®¤å å®¶å ·å®¶çµï¼ååï¼çå ¬å2026-06-18 15:30:09",
-        "url": "http://www.voyabamboo.com/news/181692.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": " åå¿å¤å©å®¶çæ¨å±2026-06-18 15:30:09",
-        "url": "http://www.voyabamboo.com/news/181691.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": " æ¼æµ®æ¨å±ççº¦å®2026-06-18 15:30:09",
-        "url": "http://www.voyabamboo.com/news/181690.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": " ç±³æ¥ç«¹ä¸åå¾ç«¹æå å·¥ç¨æ¨æåºå®è£ ç½®ä¸å©ï¼æ°ç¼¸è¾åºç«¯çåéå¯å¸¦å¨å®è£ æ¿ä¸ä¸ç§»å¨2026-06-18 15:30:09",
-        "url": "http://www.voyabamboo.com/news/181689.html",
-        "date": "2026-06-18",
+        "date": "2026-06-19",
         "source": "官网",
         "source_label": "官网"
       }
     ],
-    "total": 8
+    "total": 3
   },
   "8": {
     "company_id": 8,
     "company_name": "福建吉兴竹业有限公司",
-    "collected_at": "2026-06-18T09:12:02.763460",
+    "collected_at": "2026-06-18T20:43:04.315783",
     "updates": [
       {
         "title": "官网 http://www.fjjxbamboo.com 当前无法访问",
@@ -143,103 +108,10 @@
     ],
     "total": 1
   },
-  "9": {
-    "company_id": 9,
-    "company_name": "福建建瓯市吉丰竹业有限公司",
-    "collected_at": "2026-06-18T09:12:22.785746",
-    "updates": [
-      {
-        "title": "Õã½­½ð»ªÕ¹ÈºÅ©Òµ",
-        "url": "http://www.fjjfzy.com/case_xx.php?nid=121",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "¹óÑôÄÏÐ§ÊªµØ¹«Ô°",
-        "url": "http://www.fjjfzy.com/case_xx.php?nid=117",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "ÐÂÎÅÖÐÐÄ",
-        "url": "http://www.fjjfzy.com/news.php",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 3
-  },
-  "10": {
-    "company_id": 10,
-    "company_name": "鹰潭易可竹业有限公司",
-    "collected_at": "2026-06-18T09:12:33.551392",
-    "updates": [
-      {
-        "title": "浅碳户外重竹地板（满细槽）",
-        "url": "http://www.eco0701.com/view3-1.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "浅碳户外重竹地板（平面）",
-        "url": "http://www.eco0701.com/view3-2.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "浅碳户外重竹地板（小沟槽）",
-        "url": "http://www.eco0701.com/view3-3.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "深碳户外重竹地板（大波浪）",
-        "url": "http://www.eco0701.com/view3-5.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "深碳户外重竹地板（满细槽）",
-        "url": "http://www.eco0701.com/view3-6.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "深碳户外重竹地板（平面）",
-        "url": "http://www.eco0701.com/view3-7.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "深碳户外重竹地板（小沟槽）",
-        "url": "http://www.eco0701.com/view3-8.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "成都锦江生态带",
-        "url": "http://www.eco0701.com/view5-15.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 8
-  },
   "11": {
     "company_id": 11,
     "company_name": "连城县竹匠新材料有限公司",
-    "collected_at": "2026-06-18T09:12:34.658316",
+    "collected_at": "2026-06-18T20:43:28.175586",
     "updates": [
       {
         "title": "官网 http://www.fjlczj.com 当前无法访问",
@@ -252,40 +124,10 @@
     ],
     "total": 1
   },
-  "12": {
-    "company_id": 12,
-    "company_name": "江西吉中竹业有限公司",
-    "collected_at": "2026-06-18T09:12:51.403523",
-    "updates": [
-      {
-        "title": "江西省中小企业发展促进中心莅临指导",
-        "url": "http://www.jizhongzy.com/show/61.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 1
-  },
-  "40": {
-    "company_id": 40,
-    "company_name": "福建熊宝科技有限公司",
-    "collected_at": "2026-06-18T09:13:00.158441",
-    "updates": [
-      {
-        "title": "菠萝格色小沟槽",
-        "url": "http://www.fujianxiongbao.com/xiongbao123/products/54169333.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 1
-  },
   "13": {
     "company_id": 13,
     "company_name": "安徽尧龙竹木制品有限公司",
-    "collected_at": "2026-06-18T09:13:02.068252",
+    "collected_at": "2026-06-18T20:43:44.868755",
     "updates": [
       {
         "title": "官网 http://www.ylzmzp.cn 当前无法访问",
@@ -301,7 +143,7 @@
   "15": {
     "company_id": 15,
     "company_name": "四川华盛竹业有限责任公司",
-    "collected_at": "2026-06-18T09:13:10.241109",
+    "collected_at": "2026-06-18T20:43:53.271387",
     "updates": [
       {
         "title": "官网 http://www.bamboo-based.com 当前无法访问",
@@ -317,7 +159,7 @@
   "18": {
     "company_id": 18,
     "company_name": "洪雅竹元科技有限公司",
-    "collected_at": "2026-06-18T09:13:30.321831",
+    "collected_at": "2026-06-18T20:44:17.772612",
     "updates": [
       {
         "title": "官网 http://www.bambooera.com 当前无法访问",
@@ -333,7 +175,7 @@
   "19": {
     "company_id": 19,
     "company_name": "江西南丰振宇实业集团有限公司",
-    "collected_at": "2026-06-18T09:13:36.097128",
+    "collected_at": "2026-06-18T20:44:19.644429",
     "updates": [
       {
         "title": "官网 https://www.zhenyugroup.com 当前无法访问",
@@ -346,68 +188,10 @@
     ],
     "total": 1
   },
-  "20": {
-    "company_id": 20,
-    "company_name": "安吉君澜竹木业有限公司",
-    "collected_at": "2026-06-18T09:13:46.339800",
-    "updates": [
-      {
-        "title": "户外地板的产品特点和优势",
-        "url": "http://www.joolan.cn/news/411.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "户外地板常见问题有哪些？选择一定要慎重！",
-        "url": "http://www.joolan.cn/news/412.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "地板安装竟然还要额外收费？",
-        "url": "http://www.joolan.cn/news/456.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "安吉君澜竹木业有限公司",
-        "url": "http://www.joolan.cn/news/458.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "生态木地板的优缺点",
-        "url": "http://www.joolan.cn/news/415.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 5
-  },
-  "22": {
-    "company_id": 22,
-    "company_name": "浙江润竹科技有限公司",
-    "collected_at": "2026-06-18T09:14:12.613973",
-    "updates": [
-      {
-        "title": "浙ICP备16036863号-1",
-        "url": "https://beian.miit.gov.cn/",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 1
-  },
   "23": {
     "company_id": 23,
     "company_name": "广州齐馨竹业有限公司",
-    "collected_at": "2026-06-18T09:14:24.162277",
+    "collected_at": "2026-06-18T20:45:14.370086",
     "updates": [
       {
         "title": "官网 http://www.qixbamboo.com 当前无法访问",
@@ -423,7 +207,7 @@
   "26": {
     "company_id": 26,
     "company_name": "安吉大竹海地板有限公司",
-    "collected_at": "2026-06-18T09:14:33.906293",
+    "collected_at": "2026-06-18T20:45:24.674307",
     "updates": [
       {
         "title": "官网 https://www.yinai.cn 当前无法访问",
@@ -436,160 +220,26 @@
     ],
     "total": 1
   },
-  "27": {
-    "company_id": 27,
-    "company_name": "四川达庄竹业有限公司",
-    "collected_at": "2026-06-18T09:14:35.488397",
-    "updates": [
-      {
-        "title": "&#9666;·µ»ØÊ×Ò³",
-        "url": "http://www.scdzdb.com/",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "&#9666;·µ»ØÉÏÒ»Ò³",
-        "url": "http://www.scdzdb.com/javascript:history.go(-1);",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 2
-  },
   "28": {
     "company_id": 28,
     "company_name": "福建金骆驼实业有限公司",
-    "collected_at": "2026-06-18T09:14:48.768354",
+    "collected_at": "2026-06-18T20:45:40.355272",
     "updates": [
       {
-        "title": "CBA集锦：2026年05月22日，上海99比85战胜北京，小肯尼思&middot;洛夫顿20分7篮板6助攻1抢断2盖帽",
-        "url": "http://www.jltshiye.com/lanqiujijin/6820140.html",
-        "date": "2026-05-22",
+        "title": "官网 http://www.jltshiye.com 当前无法访问",
+        "url": "http://www.jltshiye.com",
+        "date": "2026-06-18",
         "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "意甲集锦|05月25日 AC米兰1:2不敌卡利亚里 德比战告捷",
-        "url": "http://www.jltshiye.com/zuqiujijin/7133433.html",
-        "date": "2026-05-22",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "2026年/05月/24日NBA赛事集锦：尼克斯121比108拿下骑士",
-        "url": "http://www.jltshiye.com/lanqiujijin/7025859.html",
-        "date": "2026-05-22",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "科特迪瓦坐镇主场对垒厄瓜多尔 06月15日世界杯集锦1:0取胜",
-        "url": "http://www.jltshiye.com/zuqiujijin/7549220.html",
-        "date": "2026-05-22",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "上海申花坐镇主场对垒武汉三镇 05月20日中超集锦2:2打平",
-        "url": "http://www.jltshiye.com/zuqiujijin/6726524.html",
-        "date": "2026-05-24",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "英超德比集锦：2026年05月24日 利物浦1:1打平布伦特福德",
-        "url": "http://www.jltshiye.com/zuqiujijin/7101665.html",
-        "date": "2026-05-24",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "马刺122比115力克强敌雷霆NBA集锦：2026年05月19日",
-        "url": "http://www.jltshiye.com/lanqiujijin/6618062.html",
-        "date": "2026-05-24",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "中超｜2026年05月24日｜上海申花1:2深圳新鹏城｜全场集锦",
-        "url": "http://www.jltshiye.com/zuqiujijin/7061902.html",
-        "date": "2026-05-24",
-        "source": "官网",
-        "source_label": "官网"
+        "source_label": "官网",
+        "summary": "网站不可达或超时"
       }
     ],
-    "total": 8
-  },
-  "29": {
-    "company_id": 29,
-    "company_name": "福建绿筠竹业有限公司",
-    "collected_at": "2026-06-18T09:14:56.818435",
-    "updates": [
-      {
-        "title": "【经典回放】梅开二⚾度！解说感叹：3⚾8岁的梅西你可能⚽以为是英雄暮年",
-        "url": "http://www.fjljbamboo.com/zuqiuvideo/7989.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "[五洲]9❕8年世界杯最大冷门！挪威2-1逆转巴西！弗洛扳平⬅️雷克达尔点杀",
-        "url": "http://www.fjljbamboo.com/zuqiuvideo/7990.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "[技术集锦]球迷自发？网友爆料：日本足协赛前统一组织发放⬇️垃圾袋",
-        "url": "http://www.fjljbamboo.com/zuqiuvideo/7766.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "【今日高能剪辑】顶住身价12亿西班牙的围攻❗！解说：佛✨得角40岁门将一战封神！",
-        "url": "http://www.fjljbamboo.com/zuqiuvideo/7767.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "[攻守视频]逼王上线！女主持：16❕00万人收看了比赛；伊布：❗❗他们是来看我的？",
-        "url": "http://www.fjljbamboo.com/zuqiuvideo/7527.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "[今日看点视频]1000+⬇️评论！ESPN大赞：独一无二的传统⬇️，日本✌️球迷清理看台垃圾",
-        "url": "http://www.fjljbamboo.com/zuqiuvideo/7528.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "[热点回放]输球又丢⚾人？❗土耳其名宿大发雷霆：这帮人根本没准备好踢世界杯！",
-        "url": "http://www.fjljbamboo.com/zuqiuvideo/7226.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "[比赛精编]有❗意思！玩具车游戏预测世界杯冠军，最后葡萄牙夺冠",
-        "url": "http://www.fjljbamboo.com/zuqiuvideo/7228.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 8
+    "total": 1
   },
   "30": {
     "company_id": 30,
     "company_name": "江西省崇义华森竹业有限公司",
-    "collected_at": "2026-06-18T09:14:58.347201",
+    "collected_at": "2026-06-18T20:45:47.724563",
     "updates": [
       {
         "title": "官网 http://www.jxshszy.com 当前无法访问",
@@ -602,76 +252,10 @@
     ],
     "total": 1
   },
-  "33": {
-    "company_id": 33,
-    "company_name": "安吉辉篁竹业有限公司",
-    "collected_at": "2026-06-18T09:15:08.059851",
-    "updates": [
-      {
-        "title": "Strand Woven Bamboo Flooring: Hardness, Durability & Uses",
-        "url": "http://www.hh-bamboo.com/news/industry-news/strand-woven-bamboo-flooring-hardness-durability-uses.html",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 1
-  },
-  "34": {
-    "company_id": 34,
-    "company_name": "宜兴市博远竹木制品有限公司",
-    "collected_at": "2026-06-18T09:15:21.899819",
-    "updates": [
-      {
-        "title": "博远竹木/精彩亮相2019上海国际园林景观产...",
-        "url": "http://www.sun-flooring.com/newsshow.php?cid=17&id=106",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "尚诺地板/尚诺SPC地板打造舒适魅力家居",
-        "url": "http://www.sun-flooring.com/newsshow.php?cid=17&id=109",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "关于SPC地板-给尚诺家人们的一封信",
-        "url": "http://www.sun-flooring.com/newsshow.php?cid=17&id=110",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 3
-  },
-  "35": {
-    "company_id": 35,
-    "company_name": "建瓯市吉盛竹业科技有限公司",
-    "collected_at": "2026-06-18T09:15:41.189117",
-    "updates": [
-      {
-        "title": "ÐÂÎÅÖÐÐÄ",
-        "url": "http://www.jojszy.com/news.php",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      },
-      {
-        "title": "052019- 3 ¹«Ë¾½éÉÜ ½¨ê±ÊÐ¼ªÊ¢ÖñÒµ¿Æ¼¼ÓÐÏÞ¹«Ë¾ÊÇÒ»¼Ò×¨ÒµÉú²úÓëÏúÊÛÖñÖÆ²úÆ·µÄ¼¼ÊõÆóÒµ¡£¹«Ë¾Î»ÓÚÖÐ¹úÖñ×ÓÖ®Ïç--¸£½¨½¨ê±£¬",
-        "url": "http://www.jojszy.com/news_xx.php?nid=97",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
-      }
-    ],
-    "total": 2
-  },
   "36": {
     "company_id": 36,
     "company_name": "龙游安迪竹制品有限公司",
-    "collected_at": "2026-06-18T09:15:42.932703",
+    "collected_at": "2026-06-18T20:46:17.410373",
     "updates": [
       {
         "title": "官网 http://www.andybamboo.com 当前无法访问",
@@ -680,21 +264,6 @@
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
-      }
-    ],
-    "total": 1
-  },
-  "38": {
-    "company_id": 38,
-    "company_name": "江西金凤竹业有限公司",
-    "collected_at": "2026-06-18T09:16:20.291981",
-    "updates": [
-      {
-        "title": "Á¢¼´¹ºÂò£¨Buy it !£©",
-        "url": "https://www.west.cn/ykj/view.asp?domain=jxjfzy.com",
-        "date": "2026-06-18",
-        "source": "官网",
-        "source_label": "官网"
       }
     ],
     "total": 1
@@ -749,6 +318,6 @@
       "title": "鹰潭易可竹业有限公司"
     }
   },
-  "collected_at": "2026-06-18T09:17:09.762672",
-  "total_updates": 66
+  "total_updates": 18,
+  "collected_at": "2026-06-18T20:47:25.739012"
 }
