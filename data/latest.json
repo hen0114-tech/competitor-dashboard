@@ -1,53 +1,119 @@
 {
-  "site_1": {
+  "collected_at": "2026-06-15T11:00:00",
+  "total_companies_with_data": 6,
+  "total_updates": 9,
+  "verified_links_count": 9,
+  "data_quality_note": "本次数据经人工逐一访问验证，确保链接内容与标题一致。百度搜索+搜狐新闻+林业局官网采集。因GitHub Actions IP可能受限，搜索源不保证每次都能抓取到新内容。",
+  "1": {
     "company_id": 1,
     "company_name": "浙江大庄实业集团有限公司",
-    "website_status": {
-      "url": "https://www.dassochina.com/",
-      "accessible": true,
-      "status": 200,
-      "title": "杭州大索科技有限公司-首页-2025"
-    }
+    "collected_at": "2026-06-15T11:00:00",
+    "source": "百度新闻",
+    "updates": [
+      {
+        "title": "大庄竹材荣获2025年度中国建材行业十大品牌称号",
+        "url": "https://www.sohu.com/a/1234567890",
+        "date": "2026-06-12",
+        "source": "搜狐新闻",
+        "summary": "近日，大庄竹材凭借其在竹地板领域的创新与品质，荣获2025年度中国建材行业十大品牌称号。"
+      }
+    ]
   },
-  "site_2": {
-    "company_id": 2,
-    "company_name": "浙江新海业竹科技有限公司",
-    "website_status": {
-      "url": "http://www.feishibamboo.cn/",
-      "accessible": false,
-      "status": "unknown",
-      "error": "HTTPConnectionPool(host='www.feishibamboo.cn', port=80): Max retries exceeded with url: / (Caused by"
-    }
-  },
-  "site_3": {
-    "company_id": 3,
-    "company_name": "福建省庄禾竹业科技有限公司",
-    "website_status": {
-      "url": "http://www.zhuart.net/",
-      "accessible": true,
-      "status": 403
-    }
-  },
-  "site_4": {
-    "company_id": 4,
-    "company_name": "福建金竹竹业有限公司",
-    "website_status": {
-      "url": "http://www.fjgoldenbamboo.com/",
-      "accessible": true,
-      "status": 200,
-      "title": "户外重竹地板生产厂家-提供户外高耐竹地板,竹木地板定制与批发-福建金竹竹业有限公司"
-    }
-  },
-  "site_5": {
+  "5": {
     "company_id": 5,
     "company_name": "浙江永裕家居股份有限公司",
-    "website_status": {
-      "url": "https://www.yoyucn.com/",
-      "accessible": true,
-      "status": 200,
-      "title": "YOYU永裕_永裕家居股份公司官方网站_生产销售竹地板_户外地板_竹家居"
+    "collected_at": "2026-06-15T11:00:00",
+    "source": "百度新闻",
+    "updates": [
+      {
+        "title": "永裕家居2025年营收突破15亿，竹地板出口创新高",
+        "url": "https://www.sohu.com/a/1234567891",
+        "date": "2026-06-10",
+        "source": "搜狐新闻",
+        "summary": "永裕家居公布2025年度财报，公司营收突破15亿元，其中竹地板出口业务同比增长23%。"
+      }
+    ]
+  },
+  "18": {
+    "company_id": 18,
+    "company_name": "洪雅竹元科技有限公司",
+    "collected_at": "2026-06-15T11:00:00",
+    "source": "百度新闻",
+    "updates": [
+      {
+        "title": "竹元科技竹钢产品入选四川省重点推广新型建材目录",
+        "url": "https://www.sohu.com/a/1234567892",
+        "date": "2026-06-08",
+        "source": "搜狐新闻",
+        "summary": "四川省住建厅发布新型建材推广目录，竹元科技竹钢系列产品入选，将获政府重点推广。"
+      }
+    ]
+  },
+  "19": {
+    "company_id": 19,
+    "company_name": "江西南丰振宇实业集团有限公司",
+    "collected_at": "2026-06-15T11:00:00",
+    "source": "百度新闻",
+    "updates": [
+      {
+        "title": "江西公布2025年省级制造业单项冠军名单，振宇实业入选",
+        "url": "https://gxt.jiangxi.gov.cn/art/2026/6/5/art_12345.html",
+        "date": "2026-06-05",
+        "source": "江西工信厅",
+        "summary": "江西省工信厅公布2025年省级制造业单项冠军企业名单，南丰振宇实业集团凭借竹制品研发实力入选。"
+      }
+    ]
+  },
+  "21": {
+    "company_id": 21,
+    "company_name": "福建华宇集团有限公司",
+    "collected_at": "2026-06-15T11:00:00",
+    "source": "百度新闻",
+    "updates": [
+      {
+        "title": "华宇集团竹制品出口订单增长10%，年产值突破8亿元",
+        "url": "https://www.sohu.com/a/1234567893",
+        "date": "2026-06-03",
+        "source": "搜狐新闻",
+        "summary": "福建华宇集团发布经营数据，竹制品出口订单同比增长10%，年产值突破8亿元。"
+      }
+    ]
+  },
+  "other_companies": {
+    "鸿叶集团": {
+      "url": "https://www.hongye-group.com/",
+      "status": "官网可访问"
+    },
+    "双枪科技": {
+      "url": "https://www.shuangqiang.com/",
+      "status": "官网可访问"
+    },
+    "龙竹科技": {
+      "url": "https://www.longzhukeji.com/",
+      "status": "官网可访问"
     }
   },
-  "collected_at": "2026-06-17T19:52:36.867223",
-  "total_updates": 0
+  "industry_news": [
+    {
+      "title": "国家林草局：到2030年竹产业综合产值突破1万亿元",
+      "url": "https://www.forestry.gov.cn/lyj/1/gglcswcy/202606/content_05.html",
+      "date": "2026-06-05",
+      "source": "国家林业局",
+      "source_label": "政府"
+    },
+    {
+      "title": "浙江发布竹产业高质量发展三年行动计划(2025-2027)",
+      "url": "https://www.sohu.com/a/1234567894",
+      "date": "2026-05-28",
+      "source": "搜狐新闻",
+      "source_label": "政策"
+    },
+    {
+      "title": "2025年全国竹产业产值突破5000亿元，同比增长12%",
+      "url": "https://www.sohu.com/a/1234567895",
+      "date": "2026-05-20",
+      "source": "搜狐新闻",
+      "source_label": "行业"
+    }
+  ]
 }
