@@ -2,12 +2,12 @@
   "1": {
     "company_id": 1,
     "company_name": "浙江大庄实业集团有限公司",
-    "collected_at": "2026-10-11T17:13:30.147176",
+    "collected_at": "2026-10-12T20:47:37.571802",
     "updates": [
       {
         "title": "官网 https://www.dassochina.com 为JS动态渲染，需人工查看",
         "url": "https://www.dassochina.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "JS动态渲染网站，无法自动提取文章列表"
@@ -18,12 +18,12 @@
   "2": {
     "company_id": 2,
     "company_name": "浙江新海业竹科技有限公司",
-    "collected_at": "2026-10-11T17:13:31.055914",
+    "collected_at": "2026-10-12T20:47:38.820433",
     "updates": [
       {
         "title": "官网 http://www.feishibamboo.cn 当前无法访问",
         "url": "http://www.feishibamboo.cn",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -34,12 +34,12 @@
   "3": {
     "company_id": 3,
     "company_name": "福建省庄禾竹业科技有限公司",
-    "collected_at": "2026-10-11T17:13:31.966982",
+    "collected_at": "2026-10-12T20:47:40.006880",
     "updates": [
       {
         "title": "官网 http://www.zhuart.net 当前无法访问",
         "url": "http://www.zhuart.net",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -50,12 +50,12 @@
   "6": {
     "company_id": 6,
     "company_name": "桂东众意竹木开发有限公司",
-    "collected_at": "2026-10-11T17:13:51.918649",
+    "collected_at": "2026-10-12T20:47:58.617140",
     "updates": [
       {
         "title": "官网 http://zhongyizhumu.cn 当前无法访问",
         "url": "http://zhongyizhumu.cn",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -66,26 +66,26 @@
   "7": {
     "company_id": 7,
     "company_name": "福建省有竹科技有限公司",
-    "collected_at": "2026-10-11T17:14:09.878151",
+    "collected_at": "2026-10-12T20:48:02.980796",
     "updates": [
       {
-        "title": " ææ±å¸äººæ°æ³é¢å ³äºææ±å¸éå­éé¹å¤´æä½å® æ¿å°äº§åå®¤å é¨åå®¶å ·å®¶çµï¼ç¬¬äºæ¬¡æåï¼çå ¬å2026-10-11 23:30:07",
+        "title": " ææ±å¸äººæ°æ³é¢å ³äºææ±å¸éå­éé¹å¤´æä½å® æ¿å°äº§åå®¤å é¨åå®¶å ·å®¶çµï¼ç¬¬äºæ¬¡æåï¼çå ¬å2026-10-13 03:30:08",
         "url": "http://www.voyabamboo.com/news/181696.html",
-        "date": "2026-10-11",
+        "date": "2026-10-13",
         "source": "官网",
         "source_label": "官网"
       },
       {
-        "title": " éåºå¸æ±æ´¥åºäººæ°æ³é¢å ³äºéåºå¸æ±æ´¥åºå æ±è¡éæ»¨æ±è·¯31å¹¢261å·åå®¤å å¯ç§»å¨å®¶å ·å®¶çµï¼ååï¼çå ¬å2026-10-11 23:30:07",
+        "title": " éåºå¸æ±æ´¥åºäººæ°æ³é¢å ³äºéåºå¸æ±æ´¥åºå æ±è¡éæ»¨æ±è·¯31å¹¢261å·åå®¤å å¯ç§»å¨å®¶å ·å®¶çµï¼ååï¼çå ¬å2026-10-13 03:30:08",
         "url": "http://www.voyabamboo.com/news/181695.html",
-        "date": "2026-10-11",
+        "date": "2026-10-13",
         "source": "官网",
         "source_label": "官网"
       },
       {
-        "title": " éåºå¸åç¢åºäººæ°æ³é¢å ³äºéåºå¸åç¢åºåçè·¯175å·10-12æ¿å±åå®¤å é¨åå®¶å ·å®¶çµï¼ååï¼çå ¬å2026-10-11 23:30:07",
+        "title": " éåºå¸åç¢åºäººæ°æ³é¢å ³äºéåºå¸åç¢åºåçè·¯175å·10-12æ¿å±åå®¤å é¨åå®¶å ·å®¶çµï¼ååï¼çå ¬å2026-10-13 03:30:08",
         "url": "http://www.voyabamboo.com/news/181694.html",
-        "date": "2026-10-11",
+        "date": "2026-10-13",
         "source": "官网",
         "source_label": "官网"
       }
@@ -95,12 +95,12 @@
   "8": {
     "company_id": 8,
     "company_name": "福建吉兴竹业有限公司",
-    "collected_at": "2026-10-11T17:14:10.755989",
+    "collected_at": "2026-10-12T20:48:04.016204",
     "updates": [
       {
         "title": "官网 http://www.fjjxbamboo.com 当前无法访问",
         "url": "http://www.fjjxbamboo.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -111,12 +111,12 @@
   "11": {
     "company_id": 11,
     "company_name": "连城县竹匠新材料有限公司",
-    "collected_at": "2026-10-11T17:14:32.927032",
+    "collected_at": "2026-10-12T20:48:24.671175",
     "updates": [
       {
         "title": "官网 http://www.fjlczj.com 当前无法访问",
         "url": "http://www.fjlczj.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -127,15 +127,15 @@
   "40": {
     "company_id": 40,
     "company_name": "福建熊宝科技有限公司",
-    "collected_at": "2026-10-11T17:14:46.846438",
+    "collected_at": "2026-10-12T20:48:48.047693",
     "updates": [
       {
-        "title": "官网 http://www.fujianxiongbao.com 为JS动态渲染，需人工查看",
+        "title": "官网 http://www.fujianxiongbao.com 当前无法访问",
         "url": "http://www.fujianxiongbao.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
-        "summary": "JS动态渲染网站，无法自动提取文章列表"
+        "summary": "网站不可达或超时"
       }
     ],
     "total": 1
@@ -143,12 +143,28 @@
   "13": {
     "company_id": 13,
     "company_name": "安徽尧龙竹木制品有限公司",
-    "collected_at": "2026-10-11T17:14:48.397092",
+    "collected_at": "2026-10-12T20:48:49.809316",
     "updates": [
       {
         "title": "官网 http://www.ylzmzp.cn 当前无法访问",
         "url": "http://www.ylzmzp.cn",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
+        "source": "官网",
+        "source_label": "官网",
+        "summary": "网站不可达或超时"
+      }
+    ],
+    "total": 1
+  },
+  "14": {
+    "company_id": 14,
+    "company_name": "安徽竹迹新材料科技有限公司",
+    "collected_at": "2026-10-12T20:48:50.825962",
+    "updates": [
+      {
+        "title": "官网 http://www.ahzhuji.com 当前无法访问",
+        "url": "http://www.ahzhuji.com",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -159,12 +175,12 @@
   "15": {
     "company_id": 15,
     "company_name": "四川华盛竹业有限责任公司",
-    "collected_at": "2026-10-11T17:14:55.920898",
+    "collected_at": "2026-10-12T20:48:51.743781",
     "updates": [
       {
         "title": "官网 http://www.bamboo-based.com 当前无法访问",
         "url": "http://www.bamboo-based.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -175,12 +191,12 @@
   "18": {
     "company_id": 18,
     "company_name": "洪雅竹元科技有限公司",
-    "collected_at": "2026-10-11T17:15:07.443426",
+    "collected_at": "2026-10-12T20:49:08.005427",
     "updates": [
       {
         "title": "官网 http://www.bambooera.com 当前无法访问",
         "url": "http://www.bambooera.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -191,12 +207,12 @@
   "19": {
     "company_id": 19,
     "company_name": "江西南丰振宇实业集团有限公司",
-    "collected_at": "2026-10-11T17:15:08.859541",
+    "collected_at": "2026-10-12T20:49:09.697403",
     "updates": [
       {
         "title": "官网 https://www.zhenyugroup.com 当前无法访问",
         "url": "https://www.zhenyugroup.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -207,12 +223,12 @@
   "21": {
     "company_id": 21,
     "company_name": "福建华宇集团有限公司",
-    "collected_at": "2026-10-11T17:15:20.533810",
+    "collected_at": "2026-10-12T20:49:19.093419",
     "updates": [
       {
         "title": "官网 http://www.huayufloors.com 当前无法访问",
         "url": "http://www.huayufloors.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -223,12 +239,12 @@
   "23": {
     "company_id": 23,
     "company_name": "广州齐馨竹业有限公司",
-    "collected_at": "2026-10-11T17:15:48.362267",
+    "collected_at": "2026-10-12T20:50:05.284630",
     "updates": [
       {
         "title": "官网 http://www.qixbamboo.com 当前无法访问",
         "url": "http://www.qixbamboo.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -239,12 +255,12 @@
   "25": {
     "company_id": 25,
     "company_name": "福建沃竹科技有限公司",
-    "collected_at": "2026-10-11T17:15:55.867273",
+    "collected_at": "2026-10-12T20:50:11.814582",
     "updates": [
       {
         "title": "官网 http://www.yxbamboo.cn 当前无法访问",
         "url": "http://www.yxbamboo.cn",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -255,12 +271,12 @@
   "28": {
     "company_id": 28,
     "company_name": "福建金骆驼实业有限公司",
-    "collected_at": "2026-10-11T17:16:07.600166",
+    "collected_at": "2026-10-12T20:50:23.787012",
     "updates": [
       {
         "title": "官网 http://www.jltshiye.com 当前无法访问",
         "url": "http://www.jltshiye.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -271,12 +287,12 @@
   "29": {
     "company_id": 29,
     "company_name": "福建绿筠竹业有限公司",
-    "collected_at": "2026-10-11T17:16:08.193928",
+    "collected_at": "2026-10-12T20:50:24.565094",
     "updates": [
       {
         "title": "官网 http://www.fjljbamboo.com 当前无法访问",
         "url": "http://www.fjljbamboo.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -287,12 +303,12 @@
   "30": {
     "company_id": 30,
     "company_name": "江西省崇义华森竹业有限公司",
-    "collected_at": "2026-10-11T17:16:09.585765",
+    "collected_at": "2026-10-12T20:50:25.975042",
     "updates": [
       {
         "title": "官网 http://www.jxshszy.com 当前无法访问",
         "url": "http://www.jxshszy.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -303,12 +319,12 @@
   "36": {
     "company_id": 36,
     "company_name": "龙游安迪竹制品有限公司",
-    "collected_at": "2026-10-11T17:16:31.836885",
+    "collected_at": "2026-10-12T20:50:53.033797",
     "updates": [
       {
         "title": "官网 http://www.andybamboo.com 当前无法访问",
         "url": "http://www.andybamboo.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -319,12 +335,12 @@
   "39": {
     "company_id": 39,
     "company_name": "江西神农地板有限公司",
-    "collected_at": "2026-10-11T17:16:45.127874",
+    "collected_at": "2026-10-12T20:51:04.852283",
     "updates": [
       {
         "title": "官网 http://www.jxsndb.com 当前无法访问",
         "url": "http://www.jxsndb.com",
-        "date": "2026-10-11",
+        "date": "2026-10-12",
         "source": "官网",
         "source_label": "官网",
         "summary": "网站不可达或超时"
@@ -332,56 +348,55 @@
     ],
     "total": 1
   },
-  "site_20": {
-    "company_id": 20,
-    "company_name": "安吉君澜竹木业有限公司",
+  "site_25": {
+    "company_id": 25,
+    "company_name": "福建沃竹科技有限公司",
     "website_status": {
-      "url": "http://www.joolan.cn/",
-      "accessible": true,
-      "status": 200,
-      "title": "户外竹地板_室外竹木地板_重竹地板_铝钎焊炉-安吉君澜竹木业有限公司"
-    }
-  },
-  "site_21": {
-    "company_id": 21,
-    "company_name": "福建华宇集团有限公司",
-    "website_status": {
-      "url": "http://www.huayufloors.com/",
-      "accessible": true,
-      "status": 200,
-      "title": ""
-    }
-  },
-  "site_22": {
-    "company_id": 22,
-    "company_name": "浙江润竹科技有限公司",
-    "website_status": {
-      "url": "http://www.runccn.com/",
-      "accessible": true,
-      "status": 200,
-      "title": "户外重竹地板_重竹栏杆_户外重竹墙板_竹结构建筑_浙江润竹科技官网"
-    }
-  },
-  "site_23": {
-    "company_id": 23,
-    "company_name": "广州齐馨竹业有限公司",
-    "website_status": {
-      "url": "http://www.qixbamboo.com/",
+      "url": "http://www.yxbamboo.cn/",
       "accessible": false,
       "status": "unknown",
-      "error": "HTTPConnectionPool(host='www.qixbamboo.com', port=80): Max retries exceeded with url: / (Caused by C"
+      "error": "HTTPConnectionPool(host='www.yxbamboo.cn', port=80): Max retries exceeded with url: / (Caused by Nam"
     }
   },
-  "site_24": {
-    "company_id": 24,
-    "company_name": "安吉紫竹竹木制品有限公司",
+  "site_26": {
+    "company_id": 26,
+    "company_name": "安吉大竹海地板有限公司",
     "website_status": {
-      "url": "http://www.ajzzzm.com/",
+      "url": "https://www.yinai.cn/",
       "accessible": true,
       "status": 200,
-      "title": "重竹地板_重竹地板厂家_户外竹地板-安吉紫竹竹木制品有限公司"
+      "title": "å®èå°æ¿ | ç«¹å°æ¿SPCç³å¡å°æ¿åæ·å¤é«èéç«¹æ¨å°æ¿çäº§åå®¶"
     }
   },
-  "total_updates": 22,
-  "collected_at": "2026-10-11T17:17:44.244183"
+  "site_27": {
+    "company_id": 27,
+    "company_name": "四川达庄竹业有限公司",
+    "website_status": {
+      "url": "http://www.scdzdb.com/",
+      "accessible": true,
+      "status": 200,
+      "title": "影音先锋影视大全"
+    }
+  },
+  "site_28": {
+    "company_id": 28,
+    "company_name": "福建金骆驼实业有限公司",
+    "website_status": {
+      "url": "http://www.jltshiye.com/",
+      "accessible": false,
+      "status": "unknown",
+      "error": "HTTPConnectionPool(host='www.jltshiye.com', port=80): Max retries exceeded with url: / (Caused by Ne"
+    }
+  },
+  "site_29": {
+    "company_id": 29,
+    "company_name": "福建绿筠竹业有限公司",
+    "website_status": {
+      "url": "http://www.fjljbamboo.com/",
+      "accessible": true,
+      "status": 503
+    }
+  },
+  "total_updates": 23,
+  "collected_at": "2026-10-12T20:51:45.214607"
 }
